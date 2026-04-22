@@ -1,0 +1,221 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* bibliotheque
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20210218\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-14 11:19+0000\n"
+"PO-Revision-Date: 2021-07-14 11:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__auteur
+msgid "Auteur"
+msgstr "الكاتب"
+
+#. module: bibliotheque
+#: model:ir.ui.menu,name:bibliotheque.menu_root
+msgid "Bibliothèque"
+msgstr "المكتبة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__etiquette_id
+msgid "etiquette"
+msgstr "مجال"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__name
+msgid "Catégorie"
+msgstr "مجال"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__code
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__create_uid
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__create_date
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__date_edition
+msgid "Date Edition"
+msgstr "تاريخ النشر"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_inscriptions_eleve__date_emprunte
+msgid "Date Emprunte"
+msgstr "تاريخ الاستعارة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__description
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__display_name
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__emprunteurs_ids
+msgid "Emprunteurs"
+msgstr "المستعيرين"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__id
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__photo
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__photo
+msgid "Image"
+msgstr "الصورة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette____last_update
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__write_uid
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__write_date
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: bibliotheque
+#: model_terms:ir.ui.view,arch_db:bibliotheque.livre_form_view
+msgid "List des Emprunteurs"
+msgstr "قائمة المستعيرين"
+
+#. module: bibliotheque
+#: model:ir.actions.act_window,name:bibliotheque.bibcaire_action_window
+msgid "List des bibliothecaires"
+msgstr ""
+
+#. module: bibliotheque
+#: model:ir.ui.menu,name:bibliotheque.biblithcares_list
+msgid "List des bibliothécaires"
+msgstr "قائمة موظفي المكتبة"
+
+#. module: bibliotheque
+#: model:ir.actions.act_window,name:bibliotheque.etiquette_action_window
+#: model:ir.ui.menu,name:bibliotheque.etiquette_list
+msgid "List des etiquettes"
+msgstr "قائمة المجالات"
+
+#. module: bibliotheque
+#: model:ir.ui.menu,name:bibliotheque.livre_list
+msgid "List des livres"
+msgstr "قائمة الكتب"
+
+#. module: bibliotheque
+#: model:ir.actions.act_window,name:bibliotheque.livre_action_window
+msgid "List des Livres"
+msgstr "قائمة الكتب"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__livres_ids
+#: model:ir.model.fields,field_description:bibliotheque.field_inscriptions_eleve__livres_ids
+#: model:ir.ui.menu,name:bibliotheque.livre_menu_cat
+#: model_terms:ir.ui.view,arch_db:bibliotheque.etiquette_form_view
+msgid "Livres"
+msgstr "الكتب"
+
+#. module: bibliotheque
+#: model_terms:ir.ui.view,arch_db:bibliotheque.view_eleves_form_inherit
+msgid "Livres empruntés"
+msgstr "الكتب المستعارة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_etiquette__nb_livre
+msgid "Nombre de livres"
+msgstr "عدد الكتب"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__nb_page
+msgid "Nombre de page"
+msgstr "عدد الصفحات"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__quantite
+msgid "Quantité"
+msgstr "عدد الكتب الاجمالي"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__quantite_dispo
+msgid "Quantité disponible"
+msgstr "عدد الكتب المتوفرة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_inscriptions_eleve__is_adhere
+msgid "Retourné"
+msgstr "هل تم استرجاعه ؟"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__somme_livres_adhere
+msgid "Somme Livres Adhere"
+msgstr "عدد الكتب المسترجعة"
+
+#. module: bibliotheque
+#: model:ir.model.fields,field_description:bibliotheque.field_bibliotheque_livre__titre
+msgid "Titre"
+msgstr "العنوان"
+
+#. module: bibliotheque
+#: model:ir.model,name:bibliotheque.model_bibliotheque_etiquette
+msgid "bibliotheque.etiquette"
+msgstr ""
+
+#. module: bibliotheque
+#: model:ir.model,name:bibliotheque.model_bibliotheque_emprunteur
+msgid "bibliotheque.emprunteur"
+msgstr ""
+
+#. module: bibliotheque
+#: model:ir.model,name:bibliotheque.model_bibliotheque_livre
+msgid "bibliotheque.livre"
+msgstr ""
+
+#. module: bibliotheque
+#: model:ir.ui.menu,name:bibliotheque.etiquette_menu_cat
+msgid "catégories"
+msgstr "المجالات"
+
+#. module: bibliotheque
+#: model:ir.model,name:bibliotheque.model_inscriptions_eleve
+msgid "inscriptions.eleve"
+msgstr ""
+
+#. module: bibliotheque
+#: model_terms:ir.ui.view,arch_db:bibliotheque.etiquette_form_view
+msgid "nom etiquette"
+msgstr "اسم المجال"
+

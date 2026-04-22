@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="emprunt_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 align="center">QR Code</h2>
+                        <br/>
+                        <br/>
+                        <span >Titre : </span>
+                        <span t-field="doc.titre"/>
+                        <br/>
+                        <span>Etiquette :</span>
+                        <span t-field="doc.etiquette_id.name"/>
+                        <br/>
+                        <span > Référence : </span>
+                        <span t-field="doc.reference" />
+                        <br/>
+                        <br/>
+                        <span t-field="doc.qr_code" t-options='{"widget": "image"}'/>
+                        <p align="right" style="padding-right: 50px">fait le
+                            <span t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"></span>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

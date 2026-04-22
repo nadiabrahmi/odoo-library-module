@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="etiquette_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 align="center">QR Code</h2>
+                        <br/>
+                        <table width="100%" style="border: 2px solid black; padding: 5px 5px;">
+                            <t t-foreach="doc.livres_ids" t-as="o">
+                                <tr>
+                                    <td>
+                                        <span>Titre :</span>
+                                        <span t-field="o.titre"/>
+                                        <br/>
+                                        <span>Etiquette :</span>
+                                        <span t-field="o.etiquette_id.name"/>
+                                        <br/>
+                                        <span>Référence :</span>
+                                        <span t-field="o.reference"/>
+                                    </td>
+                                    <td style="padding: 10px 10px;">
+                                        <span t-field="o.qr_code" t-options='{"widget": "image"}'/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+
+                        <p align="right" style="padding-right: 50px">fait le
+                            <span t-esc="datetime.datetime.now().strftime('%d/%m/%Y')"></span>
+                        </p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

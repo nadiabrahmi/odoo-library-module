@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_bibliotheque_etiquette_admin,bibliotheque.etiquette,model_bibliotheque_etiquette,bibliotheque.group_bibliotheque_admin,1,1,1,1
+access_bibliotheque_livre_admin,bibliotheque.livre,model_bibliotheque_livre,bibliotheque.group_bibliotheque_admin,1,1,1,1
+access_bibliotheque_emprunte_admin,bibliotheque.emprunte,model_bibliotheque_emprunte,bibliotheque.group_bibliotheque_admin,1,1,1,1
+
+access_bibliotheque_livre_enseignant,bibliotheque.livre,model_bibliotheque_livre,bibliotheque.group_bibliotheque_enseignant,1,1,1,1
+access_bibliotheque_etiquette_enseignant,bibliotheque.etiquette,model_bibliotheque_etiquette,bibliotheque.group_bibliotheque_enseignant,1,1,1,1
+access_bibliotheque_emprunte_enseignant,bibliotheque.emprunte,model_bibliotheque_emprunte,bibliotheque.group_bibliotheque_enseignant,1,1,1,1

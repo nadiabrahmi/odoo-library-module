@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+      <record id="view_event_birthday_form" model="ir.ui.view">
+        <field name="name">birth.event.form</field>
+        <field name="model">birth.event</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </div>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="birth_date"/>
+                        <field name="age"/>
+                        <field name="web_url"/>
+                        <field name="image" widget="image" class="oe_avatar"
+                       options='{"preview_image": "image", "zoom": true, "size": [140, 140]}'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_event_birthday_calendar" model="ir.ui.view">
+        <field name="name">birth.event.calendar</field>
+        <field name="model">birth.event</field>
+        <field name="arch" type="xml">
+            <calendar date_start="birth_date" string="Anniversaire des contacts" mode="month" quick_add="False"
+                      color="name">
+                <field name="partner_id"/>
+                <field name="name"/>
+                <field name="birth_date"/>
+                <field name="age"/>
+                <field name="image" widget="image" class="oe_avatar"
+                       options='{"preview_image": "image", "zoom": true, "size": [140, 140]}'/>
+            </calendar>
+        </field>
+    </record>
+        <record model="ir.actions.act_window" id="birth_event_action_window">
+            <field name="name">Calendrier des anniversaires</field>
+            <field name="res_model">birth.event</field>
+            <field name="view_mode">calendar,form</field>
+        </record>
+
+        <!-- Top menu item -->
+
+        <menuitem name="Calendrier des anniversaires" id="calendar_menu_cat" parent="contacts.menu_contacts" action="birth_event_action_window"
+                  sequence="2"/>
+    </data>
+</odoo>

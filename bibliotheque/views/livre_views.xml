@@ -1,0 +1,159 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="livre_list_view">
+            <field name="name">List des livres</field>
+            <field name="model">bibliotheque.livre</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="titre"/>
+                    <field name="color" invisible="1"/>
+                    <field name="etiquette_id" options="{'color_field': 'color'}"/>
+                    <field name="Code"/>
+                    <field name="reference"/>
+                    <field name="description"/>
+                    <field name="quantite"/>
+                    <field name="edition"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--   form view-->
+        <record model="ir.ui.view" id="livre_form_view">
+            <field name="name">bibliotheque.livre.form</field>
+            <field name="model">bibliotheque.livre</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <div>
+                            <button name="emprunter" string="Prêter" type="object"
+                                    class="oe_highlight" icon="fa-check-square-o"></button>
+                        </div>
+
+                    </header>
+                    <sheet>
+
+                        <div>
+                            <div>
+
+                                <field name="qr_code" widget="image" class="oe_avatar"
+                                       options='{"preview_image": "qr_code", "zoom": true, "size": [160, 140]}'/>
+                            </div>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="titre" placeholder="Titre"/>
+                            </h1>
+                            <h2>
+                                <field name="etiquette_id" placeholder="etiquette"/>
+                            </h2>
+                        </div>
+                        <group>
+                            <field name="Code"/>
+                            <field name="reference"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Information de livre">
+                                <group>
+                                    <group>
+                                        <field name="quantite"/>
+                                        <field name="edition"/>
+                                        <field name="description"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="List des Emprunteurs">
+                                <field name="emprunteurs_ids" attrs="{'readonly':[('emprunteurs_ids','=',True)]}">
+                                    <tree create="false">
+                                        <field name="emprunteur_id"/>
+                                        <field name="reference"/>
+                                        <field name="etiquete" options="{'color_field': 'color'}"/>
+                                        <field name="date_emprunte"/>
+                                        <field name="is_adhere"/>
+                                        <field name="date_retour" attrs="{'invisible':[('is_adhere', '=', False )]}"/>
+                                    </tree>
+                                </field>
+                                <group>
+                                    <field name="quantite_dispo"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"></field>
+                        <field name="message_ids" widget="mail_thread"></field>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="livre_view_kanban" model="ir.ui.view">
+            <field name="name">bibliotheque.livre.kanban</field>
+            <field name="model">bibliotheque.livre</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban" create="true">
+                    <field name="color" invisible="1"/>
+                    <field name="titre"/>
+                    <field name="reference"/>
+                    <field name="edition"/>
+                    <templates style="background-color:grey">
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_content oe_kanban_global_click">
+                                <!--                                <div class="o_kanban_image">-->
+                                <!--                                    <field name="photo" widget="image" class="oe_avatar"-->
+                                <!--                                           options='{"size": [130, 160]}}'/>-->
+                                <!--                                </div>-->
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="titre"/>
+                                    </strong>
+                                    <ul>
+                                        <br/>
+                                        <li>
+                                            <strong>Référence :</strong>
+                                            <field name="reference"/>
+                                        </li>
+                                        <br/>
+                                        <li>
+                                            <strong>Edition :</strong>
+                                            <field name="edition"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="livre_search_view" model="ir.ui.view">
+            <field name="name">bibliotheque.search.view</field>
+            <field name="model">bibliotheque.livre</field>
+            <field name="arch" type="xml">
+                <search string="Emprunte">
+                    <field name="titre"/>
+                    <field name="Code"/>
+                    <field name="edition"/>
+<!--                    <filter name="group_by_etiquette" string="Etiquette" icon="terp-partner"-->
+<!--                            context="{'group_by':'etiquette_id'}"/>-->
+                </search>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="livre_action_window">
+            <field name="name">List des Livres</field>
+            <field name="res_model">bibliotheque.livre</field>
+            <!--            <field name="context">{"search_default_group_by_etiquette" : True}</field>-->
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <!-- Top menu item -->
+
+        <menuitem name="Bibliothèque" id="bibliotheque.menu_root"/>
+
+        <menuitem name="Livres" id="livre_menu_cat" parent="bibliotheque.menu_root" action="livre_action_window"
+                  sequence="0"/>
+
+    </data>
+</odoo>
